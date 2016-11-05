@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN" "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+
+	<!-- tell the convention plugin what the parent package is -->
+	<constant name="struts.convention.default.parent.package" value="application-default"/>
+
+	<!-- tell the convention plugin where to find our templates -->
+	<constant name="struts.convention.result.path" value="/templates/pages"/>
+
+	<!-- enable the spring object factory -->
+	<constant name="struts.objectFactory" value="org.apache.struts2.spring.StrutsSpringObjectFactory"/>
+
+	<!-- enable struts dev mode -->
+	<constant name="struts.devMode" value="true"/>
+
+	<!-- necessary for running on embedded Tomcat -->
+	<constant name="struts.convention.exclude.parentClassLoader" value="false" />
+
+	<!-- necessary for running on WebLogic -->
+	<constant name="struts.convention.action.fileProtocols" value="jar,zip" />
+	<constant name="struts.convention.action.includeJars" value="(.*?)/.*?jar(!/)?" />
+
+	<!-- localization bundles -->
+	<constant name="struts.custom.i18n.resources" value="localization" />
+
+	<package namespace="/" name="application-default" extends="struts-default">
+		<result-types>
+			<result-type name="freemarker" class="org.apache.struts2.views.freemarker.FreemarkerResult" default="true"/>
+		</result-types>
+	</package>
+
+</struts>
