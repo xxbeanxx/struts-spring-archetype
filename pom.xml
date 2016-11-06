@@ -4,14 +4,14 @@
 	<groupId>com.github.xxbeanxx</groupId>
 	<artifactId>struts-spring-archetype</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
 
 
 	<name>struts-spring-archetype</name>
 	<description>A Struts II w/ Spring support archetype.</description>
 	<url>https://github.com/xxbeanxx/struts-spring-archetype</url>
 
-	
+
 	<licenses>
 		<license>
 			<name>MIT License</name>
@@ -19,7 +19,7 @@
 		</license>
 	</licenses>
 
-	
+
 	<issueManagement>
 		<url>https://github.com/xxbeanxx/struts-spring-archetype/issues</url>
 		<system>GitHub Issue Tracker</system>
@@ -46,7 +46,7 @@
 	<properties>
 		<docker.image.prefix>xxbeanxx</docker.image.prefix>
 		<maven.compiler.source>1.8</maven.compiler.source>
-		<maven.compiler.target>1.8</maven.compiler.target>	
+		<maven.compiler.target>1.8</maven.compiler.target>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
@@ -56,56 +56,56 @@
 		<!-- ==================================================================== -->
 		<!--         Struts II Dependencies                                       -->
 		<!-- ==================================================================== -->
-		
+
 		<dependency>
 			<groupId>org.apache.struts</groupId>
 			<artifactId>struts2-core</artifactId>
-		</dependency>		
-		
+		</dependency>
+
 		<dependency>
 			<groupId>org.apache.struts</groupId>
 			<artifactId>struts2-spring-plugin</artifactId>
-		</dependency>		
-		
+		</dependency>
+
 		<dependency>
 			<groupId>org.apache.struts</groupId>
 			<artifactId>struts2-convention-plugin</artifactId>
-		</dependency>		
+		</dependency>
 
 		<!-- ==================================================================== -->
 		<!--         Spring Dependencies                                          -->
 		<!-- ==================================================================== -->
-		
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-aop</artifactId>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-cache</artifactId>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-remote-shell</artifactId>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-		
+
 		<!-- ==================================================================== -->
 		<!--         Logging Dependencies                                         -->
 		<!-- ==================================================================== -->
@@ -126,20 +126,20 @@
 			<version>2.3.1</version>
 			<scope>provided</scope>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
 			<version>3.1.0</version><!--$NO-MVN-MAN-VER$-->
 			<scope>provided</scope>
 		</dependency>
-				
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-tomcat</artifactId>
 			<scope>provided</scope>
 		</dependency>
-		
+
 		<!-- ==================================================================== -->
 		<!--         Runtime Dependencies                                         -->
 		<!-- ==================================================================== -->
@@ -159,7 +159,7 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		
+
 	</dependencies>
 
 
@@ -171,7 +171,7 @@
 				<version>2.5.5</version>
 				<scope>import</scope>
 				<type>pom</type>
-			</dependency>		
+			</dependency>
 
 			<dependency>
 				<groupId>org.springframework.boot</groupId>
@@ -183,37 +183,4 @@
 		</dependencies>
 	</dependencyManagement>
 
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>com.spotify</groupId>
-				<artifactId>docker-maven-plugin</artifactId>
-				<version>0.4.13</version>
-				<configuration>
-					<imageName>${docker.image.prefix}/${project.artifactId}</imageName>
-					<dockerDirectory>src/main/docker</dockerDirectory>
-					<resources>
-						<resource>
-							<targetPath>/</targetPath>
-							<directory>${project.build.directory}</directory>
-							<include>${project.build.finalName}.jar</include>
-						</resource>
-					</resources>
-				</configuration>
-			</plugin>
-
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-				<executions>
-					<execution>
-						<goals>
-							<goal>repackage</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-		</plugins>
-	</build>
-	
 </project>
