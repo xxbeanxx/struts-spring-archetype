@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wls:deployment-plan
+		xmlns:wls="http://xmlns.oracle.com/weblogic/deployment-plan"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="
+				http://java.sun.com/xml/ns/j2ee
+				http://java.sun.com/xml/ns/j2ee/j2ee_1_4.xsd
+				http://xmlns.oracle.com/weblogic/deployment-plan
+				http://xmlns.oracle.com/weblogic/deployment-plan/1.0/deployment-plan.xsd">
+				
+	<!--weblogic-version:12.1.3 -->
+	<wls:application-name>struts-spring-archetype.war</wls:application-name>
+	
+</wls:deployment-plan>
