@@ -9,6 +9,11 @@
 				http://xmlns.oracle.com/weblogic/deployment-plan/1.0/deployment-plan.xsd">
 				
 	<!--weblogic-version:12.1.3 -->
-	<wls:application-name>struts-spring-archetype.war</wls:application-name>
+	<wls:application-name>struts-spring-archetype</wls:application-name>
+
+	<wls:module-override>
+		<wls:module-name>struts-spring-archetype.war</wls:module-name>
+		<wls:module-type>war</wls:module-type>
+	</wls:module-override>
 	
 </wls:deployment-plan>
