@@ -6,10 +6,17 @@
 				http://java.sun.com/xml/ns/j2ee
 				http://java.sun.com/xml/ns/j2ee/j2ee_1_4.xsd
 				http://xmlns.oracle.com/weblogic/deployment-plan
-				http://xmlns.oracle.com/weblogic/deployment-plan/1.0/deployment-plan.xsd">
+				http://xmlns.oracle.com/weblogic/deployment-plan/1.0/deployment-plan.xsd" global-variables="true">
 				
 	<!--weblogic-version:12.1.3 -->
 	<wls:application-name>struts-spring-archetype</wls:application-name>
+
+	<wls:variable-definition>
+		<wls:variable>
+			<wls:name>test</wls:name>
+			<wls:value>test</wls:value>
+		</wls:variable>
+	</wls:variable-definition>
 
 	<wls:module-override>
 		<wls:module-name>struts-spring-archetype.war</wls:module-name>
